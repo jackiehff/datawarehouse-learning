@@ -7,10 +7,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 @MapperScan("com.datafly.generator.mapper")
-public class DataGeneratorApplication {
+public class BusinessDataGeneratorApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(DataGeneratorApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(BusinessDataGeneratorApplication.class, args);
 
         MockTask mockTask = context.getBean(MockTask.class);
 

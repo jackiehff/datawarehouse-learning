@@ -10,10 +10,7 @@ import java.io.InputStream;
 
 public class ConfigUtil {
 
-
     public static String loadJsonFile(String fileName) {
-
-
         String filePath = getJarDir() + "/" + fileName;
         //  System.out.println(filePath);
         File file = new File(filePath);
