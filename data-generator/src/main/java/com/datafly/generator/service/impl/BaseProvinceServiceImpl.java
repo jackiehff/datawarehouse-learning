@@ -7,9 +7,7 @@ import com.datafly.generator.service.BaseProvinceService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 服务实现类
- * </p>
+ * 省市区服务实现类
  */
 @Service
 public class BaseProvinceServiceImpl extends ServiceImpl<BaseProvinceMapper, BaseProvince> implements BaseProvinceService {

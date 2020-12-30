@@ -7,9 +7,7 @@ import com.datafly.generator.service.ActivitySkuService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 活动参与商品 服务实现类
- * </p>
+ * 活动参与商品服务实现类
  */
 @Service
 public class ActivitySkuServiceImpl extends ServiceImpl<ActivitySkuMapper, ActivitySku> implements ActivitySkuService {

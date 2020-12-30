@@ -12,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 public class MockTask {
 
-
     @Autowired
     OrderInfoService orderInfoService;
+
     @Autowired
     CartInfoService cartInfoService;
 
@@ -38,7 +38,6 @@ public class MockTask {
 
     @Autowired
     CommentInfoService commentInfoService;
-
 
     @Value("${mock.clear:0}")
     String ifClear;
@@ -75,14 +74,11 @@ public class MockTask {
         orderRefundInfoService.genRefundsOrFinish(ifClear);
         log.warn("--------开始生成评价数据--------");
         commentInfoService.genComments(ifClear);
-
-
     }
 
     /**
      * 生成用户
      */
-
     public void genUsers() {
         userInfoService.genUserInfos(true);
     }

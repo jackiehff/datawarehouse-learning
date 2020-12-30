@@ -7,10 +7,8 @@ import com.datafly.generator.service.ActivityInfoService;
 import org.springframework.stereotype.Service;
 
 /**
- * 活动表 服务实现类
+ * 活动服务实现类
  */
 @Service
 public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, ActivityInfo> implements ActivityInfoService {
-
-
 }

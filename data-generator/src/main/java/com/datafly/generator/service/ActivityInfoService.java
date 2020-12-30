@@ -4,9 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.ActivityInfo;
 
 /**
- * <p>
- * 活动表 服务类
- * </p>
+ * 活动服务类
  */
 public interface ActivityInfoService extends IService<ActivityInfo> {
 

@@ -7,11 +7,8 @@ import com.datafly.generator.service.ActivityRuleService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 优惠规则 服务实现类
- * </p>
+ * 活动规则服务实现类
  */
 @Service
 public class ActivityRuleServiceImpl extends ServiceImpl<ActivityRuleMapper, ActivityRule> implements ActivityRuleService {
-
 }

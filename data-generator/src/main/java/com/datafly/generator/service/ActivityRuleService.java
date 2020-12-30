@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.ActivityRule;
 
 /**
- * <p>
- * 优惠规则 服务类
- * </p>
+ * 活动规则服务类
  */
 public interface ActivityRuleService extends IService<ActivityRule> {
-
 }

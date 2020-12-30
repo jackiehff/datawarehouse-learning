@@ -7,11 +7,8 @@ import com.datafly.generator.service.CouponInfoService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 优惠券表 服务实现类
- * </p>
+ * 优惠券服务实现类
  */
 @Service
 public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponInfo> implements CouponInfoService {
-
 }

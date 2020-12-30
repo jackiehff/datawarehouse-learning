@@ -7,18 +7,15 @@ import com.datafly.generator.bean.OrderInfo;
 import java.util.List;
 
 /**
- * <p>
- * 订单表 订单表 服务类
- * </p>
+ * 订单服务类
  */
 public interface OrderInfoService extends IService<OrderInfo> {
-    public void genOrderInfos(boolean ifClear);
 
-    public void updateOrderStatus(List<OrderInfo> orderInfoList);
+    void genOrderInfos(boolean ifClear);
 
-    public List<OrderInfo> listWithDetail(Wrapper<OrderInfo> queryWrapper);
+    void updateOrderStatus(List<OrderInfo> orderInfoList);
 
-    public List<OrderInfo> listWithDetail(Wrapper<OrderInfo> queryWrapper, Boolean withSkuInfo);
+    List<OrderInfo> listWithDetail(Wrapper<OrderInfo> queryWrapper);
 
-
+    List<OrderInfo> listWithDetail(Wrapper<OrderInfo> queryWrapper, Boolean withSkuInfo);
 }

@@ -7,11 +7,8 @@ import com.datafly.generator.bean.OrderStatusLog;
 import java.util.List;
 
 /**
- * <p>
- * 服务类
- * </p>
+ * 订单状态日志服务类
  */
 public interface OrderStatusLogService extends IService<OrderStatusLog> {
-    public void genOrderStatusLog(List<OrderInfo> orderInfoList);
-
+    void genOrderStatusLog(List<OrderInfo> orderInfoList);
 }

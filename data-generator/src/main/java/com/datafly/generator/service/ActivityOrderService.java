@@ -7,14 +7,12 @@ import com.datafly.generator.bean.OrderInfo;
 import java.util.List;
 
 /**
- * <p>
- * 活动与订单关联表 服务类
- * </p>
+ * 活动与订单关联服务类
  */
 public interface ActivityOrderService extends IService<ActivityOrder> {
 
-    public List<ActivityOrder> genActivityOrder(List<OrderInfo> orderInfoList, Boolean ifClear);
+    List<ActivityOrder> genActivityOrder(List<OrderInfo> orderInfoList, Boolean ifClear);
 
-    public void saveActivityOrderList(List<ActivityOrder> activityOrderList);
+    void saveActivityOrderList(List<ActivityOrder> activityOrderList);
 
 }

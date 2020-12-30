@@ -3,7 +3,7 @@ package com.datafly.generator.util;
 public class RandomEmail {
 
 
-    private static final String[] email_suffix = "@gmail.com,@yahoo.com,@msn.com,@hotmail.com,@aol.com,@ask.com,@live.com,@qq.com,@0355.net,@163.com,@163.net,@263.net,@3721.net,@yeah.net,@googlemail.com,@126.com,@sina.com,@sohu.com,@yahoo.com.cn".split(",");
+    private static final String[] EMAIL_SUFFIX = "@gmail.com,@yahoo.com,@msn.com,@hotmail.com,@aol.com,@ask.com,@live.com,@qq.com,@0355.net,@163.com,@163.net,@263.net,@3721.net,@yeah.net,@googlemail.com,@126.com,@sina.com,@sohu.com,@yahoo.com.cn".split(",");
     public static String base = "abcdefghijklmnopqrstuvwxyz0123456789";
 
     public static int getNum(int start, int end) {
@@ -24,7 +24,7 @@ public class RandomEmail {
             int number = (int) (Math.random() * base.length());
             sb.append(base.charAt(number));
         }
-        sb.append(email_suffix[(int) (Math.random() * email_suffix.length)]);
+        sb.append(EMAIL_SUFFIX[(int) (Math.random() * EMAIL_SUFFIX.length)]);
         return sb.toString();
     }
 

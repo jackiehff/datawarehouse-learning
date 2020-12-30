@@ -22,9 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 优惠券领用表 服务实现类
- * </p>
+ * 优惠券领用服务实现类
  */
 @Service
 @Slf4j
@@ -78,8 +76,6 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
         }
         log.warn("共优惠券" + couponUseList.size() + "张");
         saveBatch(couponUseList);
-
-
     }
 
     @Override
@@ -138,16 +134,13 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
                 orderInfo.sumTotalAmount();
             }
         }
-
         return couponUseListForUpdate;
-
     }
 
     @Override
     public void saveCouponUseList(List<CouponUse> couponUseList) {
         saveBatch(couponUseList, 100);
     }
-
 
     @Override
     public void usedCoupon(List<OrderInfo> orderInfoList) {
@@ -160,8 +153,5 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
         couponUse.setUsedTime(date);
         couponUse.setCouponStatus(GmallConstant.COUPON_STATUS_USED);
         update(couponUse, new QueryWrapper<CouponUse>().in("order_id", orderIdList));
-
-
     }
-
 }

@@ -4,12 +4,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.UserInfo;
 
 /**
- * <p>
- * 用户表 服务类
- * </p>
+ * 用户服务类
  */
 public interface UserInfoService extends IService<UserInfo> {
 
-    public void genUserInfos(Boolean ifClear);
+    void genUserInfos(Boolean ifClear);
 
 }

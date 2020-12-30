@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.ActivitySku;
 
 /**
- * <p>
- * 活动参与商品 服务类
- * </p>
+ * 参与活动商品服务类
  */
 public interface ActivitySkuService extends IService<ActivitySku> {
-
 }

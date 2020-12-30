@@ -4,11 +4,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.OrderRefundInfo;
 
 /**
- * <p>
- * 退单表 服务类
- * </p>
+ * 退单服务类
  */
 public interface OrderRefundInfoService extends IService<OrderRefundInfo> {
 
-    public void genRefundsOrFinish(Boolean ifClear);
+    void genRefundsOrFinish(Boolean ifClear);
 }

@@ -4,9 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.BaseProvince;
 
 /**
- * <p>
- * 服务类
- * </p>
+ * 省市区服务类
  */
 public interface BaseProvinceService extends IService<BaseProvince> {
 

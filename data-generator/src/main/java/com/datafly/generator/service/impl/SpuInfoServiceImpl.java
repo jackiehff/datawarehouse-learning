@@ -7,11 +7,8 @@ import com.datafly.generator.service.SpuInfoService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 商品表 服务实现类
- * </p>
+ * 商品服务实现类
  */
 @Service
 public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoMapper, SpuInfo> implements SpuInfoService {
-
 }

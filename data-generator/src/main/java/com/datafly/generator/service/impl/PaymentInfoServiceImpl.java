@@ -26,14 +26,11 @@ import java.util.List;
 import static com.datafly.generator.constant.GmallConstant.*;
 
 /**
- * <p>
- * 支付流水表 服务实现类
- * </p>
+ * 支付流水服务实现类
  */
 @Service
 @Slf4j
 public class PaymentInfoServiceImpl extends ServiceImpl<PaymentInfoMapper, PaymentInfo> implements PaymentInfoService {
-
 
     @Autowired
     OrderInfoService orderInfoService;

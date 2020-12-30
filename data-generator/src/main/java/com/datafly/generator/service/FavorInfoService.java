@@ -4,12 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.FavorInfo;
 
 /**
- * <p>
- * 商品收藏表 服务类
- * </p>
+ * 商品收藏服务类
  */
 public interface FavorInfoService extends IService<FavorInfo> {
-
-    public void genFavors(Boolean ifClear);
-
+    void genFavors(Boolean ifClear);
 }

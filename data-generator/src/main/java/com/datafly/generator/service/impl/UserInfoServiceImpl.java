@@ -17,9 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 用户表 服务实现类
- * </p>
+ * 用户服务实现类
  */
 @Service
 @Slf4j
@@ -27,7 +25,6 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
     @Autowired
     UserInfoMapper userInfoMapper;
-
 
     @Value("${mock.user.count}")
     String userCountString;
@@ -38,14 +35,12 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
     @Value("${mock.user.male-rate:50}")
     String maleRate;
 
-
     @Value("${mock.user.update-rate:20}")
     String updateRate;
 
     @Override
     public void genUserInfos(Boolean ifClear) {
-
-        Integer count = ParamUtil.checkCount(userCountString);
+        int count = ParamUtil.checkCount(userCountString);
         Date date = ParamUtil.checkDate(mockDate);
 
         List<UserInfo> userInfoList = new ArrayList<>();
@@ -60,12 +55,10 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         }
         saveBatch(userInfoList, 1000);
         log.warn("共生成{}名用户", userInfoList.size());
-
-
     }
 
     public UserInfo initUserInfo(Date date) {
-        Integer maleRateWeight = ParamUtil.checkRatioNum(this.maleRate);
+        int maleRateWeight = ParamUtil.checkRatioNum(this.maleRate);
 
         UserInfo userInfo = new UserInfo();
         String email = RandomEmail.getEmail(6, 12);
@@ -85,14 +78,12 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
     }
 
     public void updateUsers(Date date) {
-
-
-        Integer updateRateWeight = ParamUtil.checkRatioNum(this.updateRate);
+        int updateRateWeight = ParamUtil.checkRatioNum(this.updateRate);
         if (updateRateWeight == 0) {
             return;
         }
 
-        int count = count(new QueryWrapper<UserInfo>());
+        int count = count(new QueryWrapper<>());
 
         String userIds = RandomNumString.getRandNumString(1, count, count * updateRateWeight / 100, ",", false);
 
@@ -117,8 +108,5 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         }
         log.warn("共有{}名用户发生变更", userInfoList.size());
         saveOrUpdateBatch(userInfoList);
-
-
     }
-
 }

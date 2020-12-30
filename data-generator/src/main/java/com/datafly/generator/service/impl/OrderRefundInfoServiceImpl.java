@@ -25,9 +25,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 退单表 服务实现类
- * </p>
+ * 退单服务实现类
  */
 @Service
 @Slf4j
@@ -42,7 +40,6 @@ public class OrderRefundInfoServiceImpl extends ServiceImpl<OrderRefundInfoMappe
 
     @Value("${mock.date}")
     String mockDate;
-
 
     @Value("${mock.refund.rate:30}")
     String ifRefundRate;
@@ -104,16 +101,12 @@ public class OrderRefundInfoServiceImpl extends ServiceImpl<OrderRefundInfoMappe
                     orderInfo.setOrderStatus(GmallConstant.ORDER_STATUS_FINISH);
                     orderInfoListForUpdate.add(orderInfo);
                 }
-
             }
-
         }
 
         orderInfoService.updateOrderStatus(orderInfoListForUpdate);
 
         log.warn("共生成退款" + orderRefundInfoList.size() + "条");
         saveBatch(orderRefundInfoList);
-
-
     }
 }

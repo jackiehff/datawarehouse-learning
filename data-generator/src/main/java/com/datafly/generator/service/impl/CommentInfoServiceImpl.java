@@ -23,9 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 商品评论表 服务实现类
- * </p>
+ * 商品评论服务实现类
  */
 @Service
 @Slf4j

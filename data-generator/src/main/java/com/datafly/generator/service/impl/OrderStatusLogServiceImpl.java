@@ -14,17 +14,13 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 服务实现类
- * </p>
+ * 订单状态日志服务实现类
  */
 @Service
 public class OrderStatusLogServiceImpl extends ServiceImpl<OrderStatusLogMapper, OrderStatusLog> implements OrderStatusLogService {
 
-
     @Value("${mock.date}")
     String mockDate;
-
 
     @Override
     public void genOrderStatusLog(List<OrderInfo> orderInfoList) {
@@ -39,6 +35,5 @@ public class OrderStatusLogServiceImpl extends ServiceImpl<OrderStatusLogMapper,
             orderStatusLogList.add(orderStatusLog);
         }
         saveBatch(orderStatusLogList);
-
     }
 }

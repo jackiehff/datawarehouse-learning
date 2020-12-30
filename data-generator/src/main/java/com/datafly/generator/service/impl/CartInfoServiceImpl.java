@@ -23,9 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 
 /**
- * <p>
  * 购物车表 用户登录系统时更新冗余 服务实现类
- * </p>
  */
 @Service
 @Slf4j
@@ -35,7 +33,6 @@ public class CartInfoServiceImpl extends ServiceImpl<CartInfoMapper, CartInfo> i
 
     @Autowired
     UserInfoMapper userInfoMapper;
-
 
     @Value("${mock.cart.count:100}")
     String cartCountString;

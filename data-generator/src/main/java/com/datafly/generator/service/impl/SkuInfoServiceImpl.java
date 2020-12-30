@@ -7,11 +7,8 @@ import com.datafly.generator.service.SkuInfoService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 库存单元表 服务实现类
- * </p>
+ * 库存单元服务实现类
  */
 @Service
 public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo> implements SkuInfoService {
-
 }

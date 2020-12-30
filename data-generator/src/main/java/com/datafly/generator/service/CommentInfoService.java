@@ -4,12 +4,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.CommentInfo;
 
 /**
- * <p>
- * 商品评论表 服务类
- * </p>
+ * 商品评论服务类
  */
 public interface CommentInfoService extends IService<CommentInfo> {
 
-    public void genComments(Boolean ifClear);
+    void genComments(Boolean ifClear);
 
 }

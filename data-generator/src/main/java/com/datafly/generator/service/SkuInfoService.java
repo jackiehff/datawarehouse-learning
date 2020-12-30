@@ -4,9 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.datafly.generator.bean.SkuInfo;
 
 /**
- * <p>
- * 库存单元表 服务类
- * </p>
+ * 库存单元服务类
  */
 public interface SkuInfoService extends IService<SkuInfo> {
 

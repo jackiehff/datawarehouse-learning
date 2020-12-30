@@ -22,9 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 活动与订单关联表 服务实现类
- * </p>
+ * 活动与订单关联服务实现类
  */
 @Service
 @Slf4j
@@ -42,7 +40,7 @@ public class ActivityOrderServiceImpl extends ServiceImpl<ActivityOrderMapper, A
         Date date = ParamUtil.checkDate(mockDate);
 
         if (ifClear) {
-            remove(new QueryWrapper<ActivityOrder>());
+            remove(new QueryWrapper<>());
         }
 
 

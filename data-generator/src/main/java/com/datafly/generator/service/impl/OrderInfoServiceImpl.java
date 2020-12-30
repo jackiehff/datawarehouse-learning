@@ -24,9 +24,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 订单表 订单表 服务实现类
- * </p>
+ * 订单服务实现类
  */
 @Service
 @Slf4j

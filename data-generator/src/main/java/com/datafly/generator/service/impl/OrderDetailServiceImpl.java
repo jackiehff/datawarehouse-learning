@@ -7,9 +7,7 @@ import com.datafly.generator.service.OrderDetailService;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 订单明细表 服务实现类
- * </p>
+ * 订单明细服务实现类
  */
 @Service
 public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper, OrderDetail> implements OrderDetailService {

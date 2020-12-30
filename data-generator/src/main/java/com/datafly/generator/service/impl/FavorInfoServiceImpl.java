@@ -21,9 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 商品收藏表 服务实现类
- * </p>
+ * 商品收藏服务实现类
  */
 @Service
 @Slf4j
