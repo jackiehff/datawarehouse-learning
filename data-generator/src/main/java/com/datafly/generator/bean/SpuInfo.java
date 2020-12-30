@@ -7,12 +7,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * <p>
  * 商品表
- * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 @Data
 public class SpuInfo implements Serializable {

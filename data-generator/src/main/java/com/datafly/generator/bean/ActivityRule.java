@@ -6,12 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * <p>
- * 优惠规则
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-25
+ * 活动规则
  */
 @Data
 public class ActivityRule implements Serializable {

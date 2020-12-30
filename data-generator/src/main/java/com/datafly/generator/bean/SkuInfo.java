@@ -9,12 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 库存单元表
- * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 @Data
 public class SkuInfo implements Serializable {

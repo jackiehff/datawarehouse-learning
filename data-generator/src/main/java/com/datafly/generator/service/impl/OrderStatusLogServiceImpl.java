@@ -17,9 +17,6 @@ import java.util.List;
  * <p>
  * 服务实现类
  * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 @Service
 public class OrderStatusLogServiceImpl extends ServiceImpl<OrderStatusLogMapper, OrderStatusLog> implements OrderStatusLogService {

@@ -8,12 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 用户表
- * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 @Data
 public class UserInfo implements Serializable {

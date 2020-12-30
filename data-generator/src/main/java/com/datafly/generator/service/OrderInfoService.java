@@ -10,9 +10,6 @@ import java.util.List;
  * <p>
  * 订单表 订单表 服务类
  * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 public interface OrderInfoService extends IService<OrderInfo> {
     public void genOrderInfos(boolean ifClear);

@@ -7,14 +7,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * <p>
- *
- * </p>
- *
- * @author zc
- * @since 2020-02-24
- */
 @Data
 public class OrderStatusLog implements Serializable {
 

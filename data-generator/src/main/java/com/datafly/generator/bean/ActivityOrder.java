@@ -10,12 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 活动与订单关联表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-25
  */
 @Data
 @AllArgsConstructor

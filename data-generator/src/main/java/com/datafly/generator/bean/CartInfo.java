@@ -9,12 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 购物车表 用户登录系统时更新冗余
- * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 @Data
 public class CartInfo implements Serializable {

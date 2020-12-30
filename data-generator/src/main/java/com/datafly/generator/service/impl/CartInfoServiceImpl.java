@@ -26,9 +26,6 @@ import java.util.List;
  * <p>
  * 购物车表 用户登录系统时更新冗余 服务实现类
  * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 @Service
 @Slf4j

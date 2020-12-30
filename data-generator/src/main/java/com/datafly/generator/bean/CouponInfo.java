@@ -9,12 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 优惠券表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-26
  */
 @Data
 public class CouponInfo implements Serializable {

@@ -24,9 +24,6 @@ import java.util.List;
  * <p>
  * 商品收藏表 服务实现类
  * </p>
- *
- * @author zhangchen
- * @since 2020-02-24
  */
 @Service
 @Slf4j

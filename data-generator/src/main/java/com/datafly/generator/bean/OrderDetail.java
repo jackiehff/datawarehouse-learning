@@ -10,12 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 订单明细表
- * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 @Data
 public class OrderDetail implements Serializable {

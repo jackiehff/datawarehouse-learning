@@ -9,12 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 支付流水表
- * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 @Data
 public class PaymentInfo implements Serializable {

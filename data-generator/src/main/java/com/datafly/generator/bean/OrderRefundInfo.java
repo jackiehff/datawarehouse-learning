@@ -9,12 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * <p>
  * 退单表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-25
  */
 @Data
 public class OrderRefundInfo implements Serializable {

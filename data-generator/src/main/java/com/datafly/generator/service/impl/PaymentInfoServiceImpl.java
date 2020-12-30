@@ -29,9 +29,6 @@ import static com.datafly.generator.constant.GmallConstant.*;
  * <p>
  * 支付流水表 服务实现类
  * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 @Service
 @Slf4j

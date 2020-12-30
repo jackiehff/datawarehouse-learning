@@ -20,9 +20,6 @@ import java.util.List;
  * <p>
  * 用户表 服务实现类
  * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 @Service
 @Slf4j

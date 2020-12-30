@@ -10,9 +10,6 @@ import java.util.List;
  * <p>
  * 优惠券领用表 服务类
  * </p>
- *
- * @author zhangchen
- * @since 2020-02-26
  */
 public interface CouponUseService extends IService<CouponUse> {
 

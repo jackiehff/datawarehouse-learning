@@ -7,9 +7,6 @@ import com.datafly.generator.bean.PaymentInfo;
  * <p>
  * 支付流水表 服务类
  * </p>
- *
- * @author zc
- * @since 2020-02-24
  */
 public interface PaymentInfoService extends IService<PaymentInfo> {
     public void genPayments(Boolean ifClear);

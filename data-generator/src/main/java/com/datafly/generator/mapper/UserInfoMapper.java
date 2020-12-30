@@ -8,9 +8,6 @@ import org.apache.ibatis.annotations.Update;
  * <p>
  * 用户表 Mapper 接口
  * </p>
- *
- * @author zc
- * @since 2020-02-23
  */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 

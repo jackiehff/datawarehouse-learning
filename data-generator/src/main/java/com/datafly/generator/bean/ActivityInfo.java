@@ -8,12 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 活动表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-25
  */
 @Data
 public class ActivityInfo implements Serializable {

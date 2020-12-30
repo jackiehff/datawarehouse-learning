@@ -25,9 +25,6 @@ import java.util.List;
  * <p>
  * 优惠券领用表 服务实现类
  * </p>
- *
- * @author zhangchen
- * @since 2020-02-26
  */
 @Service
 @Slf4j

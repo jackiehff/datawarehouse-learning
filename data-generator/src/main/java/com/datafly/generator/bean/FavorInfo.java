@@ -6,12 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 商品收藏表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-24
  */
 @Data
 public class FavorInfo implements Serializable {

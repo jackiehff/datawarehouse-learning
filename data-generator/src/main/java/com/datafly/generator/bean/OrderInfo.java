@@ -11,12 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
- * 订单表 订单表
- * </p>
- *
- * @author zc
- * @since 2020-02-23
+ * 订单表
  */
 @Data
 public class OrderInfo implements Serializable {

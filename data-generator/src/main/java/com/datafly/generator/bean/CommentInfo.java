@@ -6,12 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * <p>
  * 商品评论表
- * </p>
- *
- * @author zhangchen
- * @since 2020-02-24
  */
 @Data
 public class CommentInfo implements Serializable {
