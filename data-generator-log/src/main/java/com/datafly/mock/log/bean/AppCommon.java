@@ -13,26 +13,55 @@ import lombok.Data;
 @Builder(builderClassName = "Builder")
 public class AppCommon {
 
-    private String mid; // (String) 设备唯一标识
-    private String uid; // (String) 用户uid
-    private String vc;  // (String) versionCode，程序版本号
-    private String ch;  // (String) 渠道号，应用从哪个渠道来的。
-    private String os;  // (String) 系统版本
-    private String ar;  // (String) 区域
-    private String md;  // (String) 手机型号
-    private String ba;  // (String) 手机品牌
+    /**
+     * 设备唯一标识
+     */
+    private String mid;
 
+    /**
+     * 用户uid
+     */
+    private String uid;
+
+    /**
+     * versionCode 程序版本号
+     */
+    private String vc;
+
+    /**
+     * 渠道号，应用从哪个渠道来的
+     */
+    private String ch;
+
+    /**
+     * 系统版本
+     */
+    private String os;
+
+    /**
+     * 区域
+     */
+    private String ar;
+
+    /**
+     * 手机型号
+     */
+    private String md;
+
+    /**
+     * 手机品牌
+     */
+    private String ba;
 
     public static AppCommon build() {
-        String mid; // (String) 设备唯一标识
-        String uid; // (String) 用户uid
-        String vc;  // (String) versionCode，程序版本号
-        String ch;  // (String) 渠道号，应用从哪个渠道来的。
-        String os;  // (String) 系统版本
-        String ar;  // (String) 区域
-        String md;  // (String) 手机型号
-        String ba;  // (String) 手机品牌
-
+        String mid;
+        String uid;
+        String vc;
+        String ch;
+        String os;
+        String ar;
+        String md;
+        String ba;
 
         mid = "mid_" + RandomNum.getRandInt(1, AppConfig.max_mid) + "";
         ar = new RandomOptionGroup<>(new RanOpt<>("110000", 30),

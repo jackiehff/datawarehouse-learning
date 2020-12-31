@@ -44,9 +44,7 @@ public class OrderRefundInfoServiceImpl extends ServiceImpl<OrderRefundInfoMappe
     @Value("${mock.refund.rate:30}")
     String ifRefundRate;
 
-
     RandomOptionGroup<String> refundTypeOptionGroup = new RandomOptionGroup(new RanOpt(GmallConstant.REFUND_TYPE_ONLY_MONEY, 30), new RanOpt(GmallConstant.REFUND_TYPE_WITH_GOODS, 60));
-
 
     @Value("${mock.refund.reason-rate}")
     String refundReasonRate;
@@ -54,10 +52,10 @@ public class OrderRefundInfoServiceImpl extends ServiceImpl<OrderRefundInfoMappe
     @Override
     public void genRefundsOrFinish(Boolean ifClear) {
         if (ifClear) {
-            remove(new QueryWrapper<OrderRefundInfo>());
+            remove(new QueryWrapper<>());
         }
         Date date = ParamUtil.checkDate(mockDate);
-        Integer ifRefundRateWeight = ParamUtil.checkRatioNum(this.ifRefundRate);
+        int ifRefundRateWeight = ParamUtil.checkRatioNum(this.ifRefundRate);
         RandomOptionGroup<Boolean> ifRefund = new RandomOptionGroup(new RanOpt(true, ifRefundRateWeight), new RanOpt(false, 100 - ifRefundRateWeight));
         Integer[] refundReasonRateArr = ParamUtil.checkRate(this.refundReasonRate, 7);
         RandomOptionGroup<String> refundReasonOptionGroup = new RandomOptionGroup(new RanOpt(GmallConstant.REFUND_REASON_BAD_GOODS, refundReasonRateArr[0]),
@@ -73,7 +71,7 @@ public class OrderRefundInfoServiceImpl extends ServiceImpl<OrderRefundInfoMappe
         orderInfoQueryWrapper.in("order_status", GmallConstant.ORDER_STATUS_PAID, GmallConstant.ORDER_STATUS_FINISH);
         orderInfoQueryWrapper.orderByAsc("id");
         List<OrderInfo> orderInfoList = orderInfoService.listWithDetail(orderInfoQueryWrapper);
-        List<OrderRefundInfo> orderRefundInfoList = new ArrayList();
+        List<OrderRefundInfo> orderRefundInfoList = new ArrayList<>();
         List<OrderInfo> orderInfoListForUpdate = new ArrayList<>();
         if (orderInfoList.size() == 0) {
             log.warn("没有需要退款或完结的订单！！ ");

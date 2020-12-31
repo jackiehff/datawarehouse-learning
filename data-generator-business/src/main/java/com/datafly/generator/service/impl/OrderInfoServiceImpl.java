@@ -79,8 +79,8 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
     public OrderInfo initOrder(Long userId, Integer provinceTotal, List<Long> cartIdListForUpdate) {
         Date date = ParamUtil.checkDate(mockDate);
 
-        Integer orderSkuRateWeight = ParamUtil.checkRatioNum(this.orderSkuRate);
-        Integer orderUserWeight = ParamUtil.checkRatioNum(this.orderUserRate);
+        int orderSkuRateWeight = ParamUtil.checkRatioNum(this.orderSkuRate);
+        int orderUserWeight = ParamUtil.checkRatioNum(this.orderUserRate);
 
         RandomOptionGroup<Boolean> isOrderUserOptionGroup = new RandomOptionGroup(orderUserWeight, 100 - orderUserWeight);
 
@@ -126,7 +126,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         }
 
         orderInfo.setOrderDetailList(orderDetailList);
-        orderInfo.setUserId(userId + 0L);
+        orderInfo.setUserId(userId);
         orderInfo.sumTotalAmount();
         orderInfo.setTradeBody(orderInfo.getOrderSubject());
 

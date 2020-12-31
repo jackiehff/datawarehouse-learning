@@ -12,7 +12,10 @@ import java.util.List;
 @Builder
 public class AppMain {
 
-    private Long ts;   // (String) 客户端日志产生时的时间
+    /**
+     * 客户端日志产生时的时间
+     */
+    private Long ts;
 
     private AppCommon common;
 
@@ -31,7 +34,6 @@ public class AppMain {
     public String toString() {
         return JSON.toJSONString(this);
     }
-
 
     public static class AppMainBuilder {
         public void checkError() {

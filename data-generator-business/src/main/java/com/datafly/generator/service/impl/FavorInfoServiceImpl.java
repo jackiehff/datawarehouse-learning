@@ -45,7 +45,7 @@ public class FavorInfoServiceImpl extends ServiceImpl<FavorInfoMapper, FavorInfo
 
     @Override
     public void genFavors(Boolean ifClear) {
-        Integer count = ParamUtil.checkCount(countString);
+        int count = ParamUtil.checkCount(countString);
 
         if (ifClear) {
             remove(new QueryWrapper<>());
@@ -56,8 +56,8 @@ public class FavorInfoServiceImpl extends ServiceImpl<FavorInfoMapper, FavorInfo
         List<FavorInfo> favorInfoList = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
-            Long userId = RandomNum.getRandInt(1, userTotal) + 0L;
-            Long skuId = RandomNum.getRandInt(1, skuTotal) + 0L;
+            Long userId = (long) RandomNum.getRandInt(1, userTotal);
+            Long skuId = (long) RandomNum.getRandInt(1, skuTotal);
             favorInfoList.add(initFavorInfo(skuId, userId));
         }
         saveBatch(favorInfoList, 100);

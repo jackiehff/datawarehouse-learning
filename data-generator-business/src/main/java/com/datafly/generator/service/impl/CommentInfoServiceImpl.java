@@ -50,14 +50,13 @@ public class CommentInfoServiceImpl extends ServiceImpl<CommentInfoMapper, Comme
             remove(new QueryWrapper<>());
         }
 
-
         Integer userTotal = userInfoMapper.selectCount(new QueryWrapper<>());
 
         List<CommentInfo> commentInfoList = new ArrayList<>();
         List<OrderInfo> orderInfoFinishList = orderInfoService.listWithDetail(new QueryWrapper<OrderInfo>().eq("order_status", GmallConstant.ORDER_STATUS_FINISH), true);
         for (OrderInfo orderInfo : orderInfoFinishList) {
             for (OrderDetail orderDetail : orderInfo.getOrderDetailList()) {
-                Long userId = RandomNum.getRandInt(1, userTotal) + 0L;
+                Long userId = (long) RandomNum.getRandInt(1, userTotal);
                 commentInfoList.add(initCommentInfo(orderDetail.getSkuInfo(), orderInfo, userId));
             }
         }
@@ -81,6 +80,5 @@ public class CommentInfoServiceImpl extends ServiceImpl<CommentInfoMapper, Comme
         commentInfo.setCreateTime(date);
         commentInfo.setAppraise(appraiseOptionGroup.getRandStringValue());
         return commentInfo;
-
     }
 }

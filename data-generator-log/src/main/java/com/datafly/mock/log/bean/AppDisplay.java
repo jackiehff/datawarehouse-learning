@@ -28,7 +28,6 @@ public class AppDisplay {
     public static List<AppDisplay> buildList(AppPage appPage) {
         List<AppDisplay> displayList = new ArrayList();
 
-
         if (appPage.page_id == PageId.home || appPage.page_id == PageId.discovery
                 || appPage.page_id == PageId.category) {
             int displayCount = RandomNum.getRandInt(1, max_activity_count);
@@ -47,7 +46,8 @@ public class AppDisplay {
                 || appPage.page_id == PageId.discovery) {    // 发现
 
             int displayCount = RandomNum.getRandInt(min_display_count, max_display_count);
-            int activityCount = displayList.size();// 商品显示从 活动后面开始
+            // 商品显示从 活动后面开始
+            int activityCount = displayList.size();
             for (int i = 1 + activityCount; i <= displayCount + activityCount; i++) {
                 int skuId = RandomNum.getRandInt(1, max_sku_id);
                 RandomOptionGroup<DisplayType> dispTypeGroup = RandomOptionGroup.<DisplayType>builder().add(DisplayType.promotion, 30)

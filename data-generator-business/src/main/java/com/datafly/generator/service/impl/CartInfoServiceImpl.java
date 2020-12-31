@@ -48,27 +48,25 @@ public class CartInfoServiceImpl extends ServiceImpl<CartInfoMapper, CartInfo> i
 
     @Override
     public void genCartInfo(boolean ifClear) {
-        Integer cartCount = ParamUtil.checkCount(cartCountString);
+        int cartCount = ParamUtil.checkCount(cartCountString);
         Date date = ParamUtil.checkDate(mockDate);
-
 
         if (ifClear) {
             remove(new QueryWrapper<>());
         }
-        List<SkuInfo> skuInfoList = skuInfoService.list(new QueryWrapper<SkuInfo>());
+        List<SkuInfo> skuInfoList = skuInfoService.list(new QueryWrapper<>());
         Integer userTotal = userInfoMapper.selectCount(new QueryWrapper<>());
 
         List<CartInfo> cartInfoList = new ArrayList<>();
         HashSet<String> userIdAndSkuIdSet = new HashSet<>();
         for (int i = 0; i < cartCount; i++) {
             SkuInfo skuInfo = skuInfoList.get(RandomNum.getRandInt(0, skuInfoList.size() - 1));
-            Long userId = RandomNum.getRandInt(1, userTotal) + 0L;
+            Long userId = (long) RandomNum.getRandInt(1, userTotal);
             boolean addSuccess = userIdAndSkuIdSet.add(userId + "_" + skuInfo.getId());
 
             if (addSuccess) {
                 cartInfoList.add(initCartInfo(skuInfo, userId, date));
             }
-
         }
         log.warn("共生成购物车" + cartInfoList.size() + "条");
         saveBatch(cartInfoList, 100);
@@ -84,7 +82,6 @@ public class CartInfoServiceImpl extends ServiceImpl<CartInfoMapper, CartInfo> i
                 .add(GmallConstant.SOURCE_TYPE_ACTIVITY, sourceTypeRateArray[3]).build();
         String sourceType = sourceTypeGroup.getRandStringValue();
 
-
         CartInfo cartInfo = new CartInfo();
         cartInfo.setCartPrice(skuInfo.getPrice());
         cartInfo.setImgUrl(skuInfo.getSkuDefaultImg());
@@ -92,17 +89,14 @@ public class CartInfoServiceImpl extends ServiceImpl<CartInfoMapper, CartInfo> i
         cartInfo.setSkuName(skuInfo.getSkuName());
         cartInfo.setUserId(userId);
         cartInfo.setIsOrdered(0);
-        cartInfo.setSkuNum(RandomNum.getRandInt(1, skuCount) + 0L);
+        cartInfo.setSkuNum((long) RandomNum.getRandInt(1, skuCount));
         cartInfo.setCreateTime(date);
         cartInfo.setSourceType(sourceType);
         if (sourceType.equals(GmallConstant.SOURCE_TYPE_PROMOTION)) {
-            cartInfo.setSourceId(RandomNum.getRandInt(10, 100) + 0L);
+            cartInfo.setSourceId((long) RandomNum.getRandInt(10, 100));
         } else if (sourceType.equals(GmallConstant.SOURCE_TYPE_ACTIVITY)) {
-            cartInfo.setSourceId(RandomNum.getRandInt(1, 2) + 0L);
+            cartInfo.setSourceId((long) RandomNum.getRandInt(1, 2));
         }
-
         return cartInfo;
     }
-
-
 }

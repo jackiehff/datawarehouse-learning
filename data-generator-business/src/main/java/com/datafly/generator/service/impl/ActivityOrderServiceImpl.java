@@ -43,7 +43,6 @@ public class ActivityOrderServiceImpl extends ServiceImpl<ActivityOrderMapper, A
             remove(new QueryWrapper<>());
         }
 
-
         List<ActivitySku> activitySkuList = activitySkuService.list(new QueryWrapper<>());
 
         // 检查每个订单里是否有对应的活动商品 如果有随机进行优惠

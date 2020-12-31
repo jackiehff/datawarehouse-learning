@@ -69,7 +69,7 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
                 couponUse.setCouponStatus(GmallConstant.COUPON_STATUS_UNUSED);
                 couponUse.setGetTime(date);
                 couponUse.setExpireTime(couponInfo.getExpireTime());
-                couponUse.setUserId(userId + 0L);
+                couponUse.setUserId((long) userId);
                 couponUse.setCouponId(couponInfo.getId());
                 couponUseList.add(couponUse);
             }
@@ -120,8 +120,6 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
                         break orderDetailLoop;
                     }
                 }
-
-
             }
 
             if (canUseCoupon) {

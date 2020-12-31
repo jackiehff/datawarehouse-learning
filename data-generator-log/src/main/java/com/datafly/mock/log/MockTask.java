@@ -9,16 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class MockTask {
 
-
     @Autowired
     ThreadPoolTaskExecutor poolExecutor;
 
     public void mainTask() {
 
         for (int i = 0; i < AppConfig.mock_count; i++) {
-            //poolExecutor.execute(new Mocker());
             System.out.println("active+" + poolExecutor.getActiveCount());
-            new com.datafly.mock.log.Mocker().run();
+            new Mocker().run();
         }
     }
 }
