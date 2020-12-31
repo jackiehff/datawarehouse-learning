@@ -11,8 +11,5 @@ public enum DisplayType {
     query("查询结果商品"),
     activity("促销活动");
 
-
     private String desc;
-
-
 }

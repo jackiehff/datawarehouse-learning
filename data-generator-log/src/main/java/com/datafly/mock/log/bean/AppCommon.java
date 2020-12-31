@@ -35,8 +35,6 @@ public class AppCommon {
 
 
         mid = "mid_" + RandomNum.getRandInt(1, AppConfig.max_mid) + "";
-        ;
-
         ar = new RandomOptionGroup<String>(new RanOpt<String>("110000", 30),
                 new RanOpt<String>("310000", 20),
                 new RanOpt<String>("230000", 10),
@@ -58,7 +56,7 @@ public class AppCommon {
                 new RanOpt<String>("Huawei Mate 30", 10),
                 new RanOpt<String>("Redmi k30", 10),
                 new RanOpt<String>("Honor 20s", 5),
-                new RanOpt<String>("vivo iqoo3", 20),
+                new RanOpt<>("vivo iqoo3", 20),
                 new RanOpt<String>("Oneplus 7", 5),
                 new RanOpt<String>("Sumsung Galaxy S20", 3)).getRandStringValue();
 

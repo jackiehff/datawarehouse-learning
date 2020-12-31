@@ -16,8 +16,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>business-data-generator</module>
-        <module>log-data-generator</module>
+        <module>data-generator-business</module>
+        <module>data-generator-log</module>
         <module>data-generator-utils</module>
         <module>data-etl</module>
     </modules>

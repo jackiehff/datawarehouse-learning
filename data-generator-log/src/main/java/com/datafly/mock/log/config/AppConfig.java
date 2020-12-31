@@ -10,7 +10,6 @@ import java.util.Date;
 @Configuration
 public class AppConfig {
 
-
     public static Date date = new Date();
 
     public static Integer mock_count = 1000;
@@ -23,15 +22,11 @@ public class AppConfig {
 
     public static Integer max_uid = 500;
 
-
     public static Integer max_sku_id = 10;
-
 
     public static Integer page_during_max_ms = 20000;
 
-
     public static Integer error_rate = 3;
-
 
     public static Integer log_sleep = 100;
 
@@ -49,13 +44,11 @@ public class AppConfig {
 
     public static Integer if_add_address = 15;
 
-
     public static Integer max_display_count = 10;
 
     public static Integer min_display_count = 4;
 
     public static Integer max_activity_count = 2;
-
 
     public static Integer[] sourceTypeRate;
 
@@ -156,6 +149,5 @@ public class AppConfig {
     public void setSourceType(String sourceTypeRate) {
         Integer[] sourceTypeRateArray = ParamUtil.checkRate(sourceTypeRate, 4);
         AppConfig.sourceTypeRate = sourceTypeRateArray;
-
     }
 }

@@ -14,7 +14,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class AppPage {
 
-
     PageId last_page_id;
 
     PageId page_id;
@@ -31,9 +30,7 @@ public class AppPage {
 
     DisplayType source_type;
 
-
     public static AppPage build(PageId pageId, PageId lastPageId, Integer duringTime) {
-
         ItemType itemType = null;
         String item = null;
         String extend1 = null;
@@ -45,7 +42,6 @@ public class AppPage {
                 .add(DisplayType.promotion, AppConfig.sourceTypeRate[1])
                 .add(DisplayType.recommend, AppConfig.sourceTypeRate[2])
                 .add(DisplayType.activity, AppConfig.sourceTypeRate[3]).build();
-
 
         if (pageId == PageId.good_detail || pageId == PageId.good_spec || pageId == PageId.comment || pageId == PageId.comment_list) {
 

@@ -8,7 +8,6 @@ public enum ItemType {
     activity_id("活动id"),
     coupon_id("购物券id");
 
-
     String desc;
 
     ItemType(String desc) {

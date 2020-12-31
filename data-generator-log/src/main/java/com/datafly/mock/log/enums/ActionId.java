@@ -1,7 +1,6 @@
 package com.datafly.mock.log.enums;
 
 public enum ActionId {
-
     favor_add("添加收藏"),
     favor_canel("取消收藏"),
     cart_add("添加购物车"),
@@ -16,5 +15,4 @@ public enum ActionId {
     ActionId(String desc) {
         this.desc = desc;
     }
-
 }

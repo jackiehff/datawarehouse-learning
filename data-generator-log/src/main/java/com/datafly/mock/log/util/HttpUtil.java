@@ -27,9 +27,10 @@ public class HttpUtil {
 
     public static void post(String json) {
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
+        // post请求
         Request request = new Request.Builder()
                 .url(AppConfig.mock_url)
-                .post(requestBody) //post请求
+                .post(requestBody)
                 .build();
         Call call = HttpUtil.getInstance().newCall(request);
         Response response = null;
