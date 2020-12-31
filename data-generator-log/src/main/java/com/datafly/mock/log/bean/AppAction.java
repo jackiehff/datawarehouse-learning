@@ -29,7 +29,7 @@ public class AppAction {
 
 
     public static List<AppAction> buildList(AppPage appPage, Long startTs, Integer duringTime) {
-        List<AppAction> actionList = new ArrayList();
+        List<AppAction> actionList = new ArrayList<>();
         Boolean ifFavor = RandomOptionGroup.builder().add(true, AppConfig.if_favor_rate).add(false, 100 - AppConfig.if_favor_rate).build().getRandBoolValue();
         Boolean ifCart = RandomOptionGroup.builder().add(true, AppConfig.if_cart_rate).add(false, 100 - AppConfig.if_cart_rate).build().getRandBoolValue();
         Boolean ifCartAddNum = RandomOptionGroup.builder().add(true, AppConfig.if_cart_add_num_rate).add(false, 100 - AppConfig.if_cart_add_num_rate).build().getRandBoolValue();

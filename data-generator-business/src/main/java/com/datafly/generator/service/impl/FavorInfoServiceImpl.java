@@ -46,15 +46,12 @@ public class FavorInfoServiceImpl extends ServiceImpl<FavorInfoMapper, FavorInfo
     @Override
     public void genFavors(Boolean ifClear) {
         int count = ParamUtil.checkCount(countString);
-
         if (ifClear) {
             remove(new QueryWrapper<>());
         }
         Integer skuTotal = skuInfoMapper.selectCount(new QueryWrapper<>());
         Integer userTotal = userInfoMapper.selectCount(new QueryWrapper<>());
-
         List<FavorInfo> favorInfoList = new ArrayList<>();
-
         for (int i = 0; i < count; i++) {
             Long userId = (long) RandomNum.getRandInt(1, userTotal);
             Long skuId = (long) RandomNum.getRandInt(1, skuTotal);
@@ -64,12 +61,9 @@ public class FavorInfoServiceImpl extends ServiceImpl<FavorInfoMapper, FavorInfo
         log.warn("共生成收藏" + favorInfoList.size() + "条");
     }
 
-
     public FavorInfo initFavorInfo(Long skuId, Long userId) {
-
         Date date = ParamUtil.checkDate(mockDate);
-        Integer cancelRateWeight = ParamUtil.checkRatioNum(this.cancelRate);
-
+        int cancelRateWeight = ParamUtil.checkRatioNum(this.cancelRate);
         RandomOptionGroup<String> isCancelOptionGroup = new RandomOptionGroup(new RanOpt("1", cancelRateWeight), new RanOpt("0", 100 - cancelRateWeight));
 
         FavorInfo favorInfo = new FavorInfo();

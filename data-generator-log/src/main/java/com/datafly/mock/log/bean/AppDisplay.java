@@ -26,7 +26,7 @@ public class AppDisplay {
     Integer order;
 
     public static List<AppDisplay> buildList(AppPage appPage) {
-        List<AppDisplay> displayList = new ArrayList();
+        List<AppDisplay> displayList = new ArrayList<>();
 
         if (appPage.page_id == PageId.home || appPage.page_id == PageId.discovery
                 || appPage.page_id == PageId.category) {

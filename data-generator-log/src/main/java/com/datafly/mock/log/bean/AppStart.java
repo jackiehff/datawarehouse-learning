@@ -46,7 +46,7 @@ public class AppStart {
             entry = new RandomOptionGroup<>(new RanOpt<>("install", 5),
                     new RanOpt<>("icon", 75),
                     new RanOpt<>("notice", 20)).getRandStringValue();
-            open_ad_id = RandomNum.getRandInt(1, 20) + 0L;
+            open_ad_id = (long) RandomNum.getRandInt(1, 20);
             open_ad_ms = RandomNum.getRandInt(1000, 10000);
             open_ad_skip_ms = RandomOptionGroup.builder().add(0, 50).add(RandomNum.getRandInt(1000, open_ad_ms), 50).build().getRandIntValue();
             loading_time = RandomNum.getRandInt(1000, 20000);

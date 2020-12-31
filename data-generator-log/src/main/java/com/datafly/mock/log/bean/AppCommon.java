@@ -123,7 +123,6 @@ public class AppCommon {
 
         uid = RandomNum.getRandInt(1, AppConfig.max_uid) + "";
 
-        AppCommon appBase = new AppCommon(mid, uid, vc, ch, os, ar, md, ba);
-        return appBase;
+        return new AppCommon(mid, uid, vc, ch, os, ar, md, ba);
     }
 }

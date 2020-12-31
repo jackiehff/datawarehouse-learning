@@ -105,7 +105,6 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         int provinceId = RandomNum.getRandInt(1, provinceTotal);
         orderInfo.setProvinceId(provinceId);
 
-
         List<CartInfo> userCartList = cartInfoService.list(new QueryWrapper<CartInfo>().eq("user_id", userId));
         List<OrderDetail> orderDetailList = new ArrayList<>();
         for (CartInfo cartInfo : userCartList) {
@@ -130,9 +129,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         orderInfo.sumTotalAmount();
         orderInfo.setTradeBody(orderInfo.getOrderSubject());
 
-
         return orderInfo;
-
     }
 
     @Override
@@ -191,15 +188,13 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             }
             couponUseService.saveCouponUseList(couponUseList);
         }
-
-
         orderStatusLogService.genOrderStatusLog(orderInfoList);
     }
 
     @Transactional(rollbackFor = Exception.class)
     public boolean saveBatch(List<OrderInfo> orderInfoList) {
         super.saveBatch(orderInfoList, 100);
-        List orderDetailAllList = new ArrayList();
+        List<OrderDetail> orderDetailAllList = new ArrayList<>();
         for (OrderInfo orderInfo : orderInfoList) {
             Long orderId = orderInfo.getId();
             List<OrderDetail> orderDetailList = orderInfo.getOrderDetailList();
@@ -209,8 +204,6 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             }
         }
         return orderDetailService.saveBatch(orderDetailAllList, 100);
-
-
     }
 
 
@@ -221,7 +214,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             System.out.println("没有需要更新状态的订单！！ ");
             return;
         }
-        List orderInfoUpdateList = new ArrayList();
+        List<OrderInfo> orderInfoUpdateList = new ArrayList<>();
 
         for (OrderInfo orderInfo : orderInfoList) {
             OrderInfo orderInfoForUpdate = new OrderInfo();
@@ -232,10 +225,7 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         }
         System.out.println("状态更新" + orderInfoUpdateList.size() + "个订单");
         orderStatusLogService.genOrderStatusLog(orderInfoUpdateList);
-
-
         saveOrUpdateBatch(orderInfoUpdateList, 100);
-
     }
 
     @Override
@@ -257,9 +247,5 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
             orderInfo.setOrderDetailList(orderDetailList);
         }
         return orderInfoList;
-
-
     }
-
-
 }

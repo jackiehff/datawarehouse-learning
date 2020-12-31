@@ -147,7 +147,6 @@ public class AppConfig {
 
     @Value("${mock.detail.source-type-rate}")
     public void setSourceType(String sourceTypeRate) {
-        Integer[] sourceTypeRateArray = ParamUtil.checkRate(sourceTypeRate, 4);
-        AppConfig.sourceTypeRate = sourceTypeRateArray;
+        AppConfig.sourceTypeRate = ParamUtil.checkRate(sourceTypeRate, 4);
     }
 }

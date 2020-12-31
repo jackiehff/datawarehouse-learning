@@ -20,7 +20,7 @@ public class RandomOptionGroup<T> {
     }
 
     public static class Builder<T> {
-        List<RanOpt> optList = new ArrayList();
+        List<RanOpt> optList = new ArrayList<>();
 
         int totalWeight = 0;
 

@@ -40,8 +40,7 @@ public class AppMain {
             Integer errorRate = AppConfig.error_rate;
             Boolean ifError = RandomOptionGroup.builder().add(true, errorRate).add(false, 100 - errorRate).build().getRandBoolValue();
             if (ifError) {
-                AppError appError = AppError.build();
-                this.err = appError;
+                this.err = AppError.build();
             }
         }
     }

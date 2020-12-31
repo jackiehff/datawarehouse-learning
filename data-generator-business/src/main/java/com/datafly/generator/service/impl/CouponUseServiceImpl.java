@@ -50,14 +50,13 @@ public class CouponUseServiceImpl extends ServiceImpl<CouponUseMapper, CouponUse
     @Override
     public void genCoupon(Boolean ifClear) {
         Date date = ParamUtil.checkDate(mockDate);
-        Integer userCount = ParamUtil.checkCount(this.userCount);
+        int userCount = ParamUtil.checkCount(this.userCount);
         if (ifClear) {
             remove(new QueryWrapper<>());
-
         }
         QueryWrapper<UserInfo> userInfoQueryWrapper = new QueryWrapper<>();
         userInfoQueryWrapper.last("limit " + userCount);
-        Integer userTotal = userInfoService.count(userInfoQueryWrapper);
+        int userTotal = userInfoService.count(userInfoQueryWrapper);
 
 
         List<CouponInfo> couponInfoList = couponInfoService.list(new QueryWrapper<>());
