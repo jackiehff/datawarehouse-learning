@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class RandomNumString {
 
-    public static final String getRandNumString(int fromNum, int toNum, int count, String delimiter, boolean canRepeat) {
+    public static String getRandNumString(int fromNum, int toNum, int count, String delimiter, boolean canRepeat) {
         String numString = "";
         if (canRepeat) {
             ArrayList<Integer> numList = new ArrayList<>();
@@ -39,7 +39,7 @@ public class RandomNumString {
         return numString;
     }
 
-    public static final String getRandNumString(int fromNum, int toNum, int count, String delimiter) {
+    public static String getRandNumString(int fromNum, int toNum, int count, String delimiter) {
         return getRandNumString(fromNum, toNum, count, delimiter, true);
     }
 

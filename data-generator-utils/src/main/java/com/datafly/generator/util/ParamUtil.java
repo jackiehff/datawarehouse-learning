@@ -9,9 +9,9 @@ import java.util.Date;
 @Slf4j
 public class ParamUtil {
 
-    public static final Integer checkRatioNum(String rate) {
+    public static Integer checkRatioNum(String rate) {
         try {
-            Integer rateNum = Integer.valueOf(rate);
+            int rateNum = Integer.parseInt(rate);
             if (rateNum < 0 || rateNum > 100) {
                 throw new RuntimeException("输入的比率必须为0 - 100 的数字");
             }
@@ -19,25 +19,22 @@ public class ParamUtil {
         } catch (Exception e) {
             throw new RuntimeException("输入的比率必须为0 - 100 的数字");
         }
-
     }
 
-    public static final Date checkDate(String dateString) {
+    public static Date checkDate(String dateString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
         SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             String timeString = timeFormat.format(new Date());
             String datetimeString = dateString + " " + timeString;
-            Date date = datetimeFormat.parse(datetimeString);
-            return date;
+            return datetimeFormat.parse(datetimeString);
         } catch (ParseException e) {
             throw new RuntimeException("必须为日期型格式 例如： 2020-02-02");
         }
     }
 
-
-    public static final Boolean checkBoolean(String bool) {
+    public static Boolean checkBoolean(String bool) {
         if ("1".equals(bool) || "true".equals(bool)) {
             return true;
         } else if ("0".equals(bool) || "false".equals(bool)) {
@@ -47,7 +44,7 @@ public class ParamUtil {
         }
     }
 
-    public static final Integer[] checkRate(String rateString, int rateCount) {
+    public static Integer[] checkRate(String rateString, int rateCount) {
         try {
             String[] rateArray = rateString.split(":");
             if (rateArray.length != rateCount) {
@@ -62,17 +59,15 @@ public class ParamUtil {
         } catch (Exception e) {
             throw new RuntimeException("请按比例填写 如   75:10:15");
         }
-
     }
 
 
-    public static final Integer checkCount(String count) {
+    public static Integer checkCount(String count) {
         try {
             if (count == null) {
                 return 0;
             }
-            Integer rateNum = Integer.valueOf(count);
-            return rateNum;
+            return Integer.valueOf(count);
         } catch (Exception e) {
             throw new RuntimeException("输入的数据必须为数字");
         }
@@ -80,7 +75,6 @@ public class ParamUtil {
 
     public static void main(String[] args) {
         System.out.println(ParamUtil.checkDate("2019-13-1123"));
-        ;
         System.out.println("ok");
     }
 }

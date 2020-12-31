@@ -7,12 +7,10 @@ import java.util.Random;
 public class RandomName {
 
     public static String getChineseFamilyName() {
-
         String str = null;
-
         Random random = new Random();
 
-        /*百家姓 */
+        // 百家姓
         String[] surnameArr = {"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "卫", "蒋", "沈", "韩", "杨", "朱", "秦", "尤", "许",
 
                 "何", "吕", "施", "张", "孔", "曹", "严", "华", "金", "魏", "陶", "姜", "戚", "谢", "邹", "柏", "窦", "苏", "潘", "葛", "范", "彭",
@@ -30,38 +28,31 @@ public class RandomName {
                 "南门", "呼延", "百里", "东郭", "西门", "南宫", "独孤", "南宫"};
 
         int index = random.nextInt(surnameArr.length - 1);
-
-        str = surnameArr[index]; //获得一个随机的姓氏
-
+        // 获得一个随机的姓氏
+        str = surnameArr[index];
         return str;
 
     }
-
-//    getChineseGivenName方法具体实现如下
 
     public static String getChineseGivenName() {
         String str = null;
         int highPos, lowPos;
         Random random = new Random();
-        highPos = (176 + Math.abs(random.nextInt(71)));//区码，0xA0打头，从第16区开始，即0xB0=11*16=176,16~55一级汉字，56~87二级汉字
+        // 区码，0xA0打头，从第16区开始，即0xB0=11*16=176,16~55一级汉字，56~87二级汉字
+        highPos = (176 + Math.abs(random.nextInt(71)));
         random = new Random();
-        lowPos = 161 + Math.abs(random.nextInt(94));//位码，0xA0打头，范围第1~94列
+        // 位码，0xA0打头，范围第1~94列
+        lowPos = 161 + Math.abs(random.nextInt(94));
         byte[] bArr = new byte[2];
         bArr[0] = (new Integer(highPos)).byteValue();
         bArr[1] = (new Integer(lowPos)).byteValue();
-
         try {
-
-            str = new String(bArr, "GB2312");//区位码组合成汉字
-
+            // 区位码组合成汉字
+            str = new String(bArr, "GB2312");
         } catch (UnsupportedEncodingException e) {
-
             e.printStackTrace();
-
         }
-
         return str;
-
     }
 
     public static String getNickName(String gender, String lastName) {
@@ -74,8 +65,6 @@ public class RandomName {
         } else {
             return lastName;
         }
-
-
     }
 
     public static String insideLastName(String gender) {
@@ -89,18 +78,14 @@ public class RandomName {
         if ("F".equals(gender)) {
             str = girlName;
             length = girlName.length();
-
-
         } else {
             str = boyName;
             length = boyName.length();
-
-
         }
         int nameCount = RandomNum.getRandInt(1, 2);
         index = RandomNum.getRandInt(0, length - nameCount);
-        return str.substring(index, index + nameCount);//获得一个随机的名字
-
+        // 获得一个随机的名字
+        return str.substring(index, index + nameCount);
     }
 
     public static String genName() {
@@ -110,22 +95,11 @@ public class RandomName {
     public static String genName(String gender) {
         String name = getChineseFamilyName();
         String lastName = insideLastName(gender);
-//            if(new Random().nextBoolean()){//true,则名2个汉字
-//
-//                name += getChineseGivenName()+getChineseGivenName();
-//
-//            }else {//false,则名1个汉字
-//
-//                name += getChineseGivenName();
-//
-//            }
         return name + lastName;
     }
 
     public static void main(String[] args) {
         System.out.println(genName("F"));
     }
-
-
 }
 

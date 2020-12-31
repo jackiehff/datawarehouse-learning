@@ -13,7 +13,7 @@ public class RandomOptionGroup<T> {
 
     int totalWeight = 0;
 
-    List<RanOpt> optList = new ArrayList();
+    List<RanOpt> optList = new ArrayList<>();
 
     public static <T> Builder<T> builder() {
         return new Builder<T>();
@@ -36,7 +36,6 @@ public class RandomOptionGroup<T> {
         public RandomOptionGroup<T> build() {
             return new RandomOptionGroup<T>(totalWeight, optList);
         }
-
     }
 
     public RandomOptionGroup(String... values) {
@@ -53,7 +52,6 @@ public class RandomOptionGroup<T> {
             for (int i = 0; i < opt.getWeight(); i++) {
                 optList.add(opt);
             }
-
         }
     }
 
@@ -69,7 +67,6 @@ public class RandomOptionGroup<T> {
 
     public RandomOptionGroup(int trueWeight, int falseWeight) {
         this(new RanOpt(true, trueWeight), new RanOpt(false, falseWeight));
-
     }
 
     public T getValue() {
@@ -93,7 +90,6 @@ public class RandomOptionGroup<T> {
     }
 
     public Boolean getRandBoolValue() {
-
         int i = new Random().nextInt(totalWeight);
         return (Boolean) optList.get(i).getValue();
     }
@@ -104,8 +100,6 @@ public class RandomOptionGroup<T> {
         for (int i = 0; i < 10; i++) {
             System.out.println(randomOptionGroup.getRandomOpt().getValue());
         }
-
     }
-
 }
 
