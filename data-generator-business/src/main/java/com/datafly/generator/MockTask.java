@@ -87,7 +87,6 @@ public class MockTask {
     /**
      * 购物车
      */
-
     public void genCarts() {
         cartInfoService.genCartInfo(true);
     }
@@ -95,7 +94,6 @@ public class MockTask {
     /**
      * 下单
      */
-
     public void genOrders() {
         //  couponUseService.genCoupon(20,   true);  //领取购物券
 
@@ -106,7 +104,6 @@ public class MockTask {
     /**
      * 支付
      */
-
     public void genPayments() {
         paymentInfoService.genPayments(true);
     }
@@ -114,7 +111,6 @@ public class MockTask {
     /**
      * 退单
      */
-
     public void genRefundOrFinish() {
         orderRefundInfoService.genRefundsOrFinish(true);
     }
@@ -122,7 +118,6 @@ public class MockTask {
     /**
      * 评价
      */
-
     public void genCommonInfo() {
         commentInfoService.genComments(true);
     }
@@ -131,7 +126,6 @@ public class MockTask {
     /**
      * 收藏
      */
-
     public void genFavor() {
         favorInfoService.genFavors(true);
     }

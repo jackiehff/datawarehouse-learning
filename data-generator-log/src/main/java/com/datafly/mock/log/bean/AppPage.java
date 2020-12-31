@@ -57,8 +57,5 @@ public class AppPage {
             item = RandomNumString.getRandNumString(1, AppConfig.max_sku_id, RandomNum.getRandInt(1, 3), ",", false);
         }
         return new AppPage(lastPageId, pageId, itemType, item, duringTime, extend1, extend2, sourceType);
-
     }
-
-
 }

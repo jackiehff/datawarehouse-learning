@@ -2,10 +2,10 @@
 data-generator.iml
 data-etl/target
 data-etl.iml
-data-generator/target
-business-data-generator/target
 data-generator-utils.iml
 data-generator-utils/target
-log-data-generator.iml
-log-data-generator/target
-business-data-generator.iml
+/data-generator-business/data-generator-business.iml
+/data-generator-log/data-generator-log.iml
+realtime-dw-demo.iml
+data-generator-business/target
+data-generator-log/target
