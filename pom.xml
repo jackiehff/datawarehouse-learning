@@ -11,14 +11,12 @@
     </parent>
 
     <groupId>com.datafly</groupId>
-    <artifactId>realtime-dw-demo</artifactId>
+    <artifactId>flink-dw-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>data-generator-business</module>
-        <module>data-generator-log</module>
-        <module>data-generator-utils</module>
+        <module>data-generator</module>
         <module>data-etl</module>
     </modules>
 
@@ -30,16 +28,6 @@
         <lombok.version>1.18.16</lombok.version>
         <slf4j.version>1.7.30</slf4j.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.datafly</groupId>
-                <artifactId>data-generator-utils</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -61,5 +49,4 @@
             <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
-
 </project>
